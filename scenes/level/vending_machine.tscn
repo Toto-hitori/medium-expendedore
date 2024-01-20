@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp6d1x34i1500"]
+
+[ext_resource type="PackedScene" uid="uid://ct15f33gae1o4" path="res://scenes/level/keyboard.tscn" id="1_oasu4"]
+[ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
+[ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
+[ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
+[ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
+
+[node name="VendingMachine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y1twq")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(270, 0, 270, 268)
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(268, 160, 445, 160)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -133.0
+offset_right = 223.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="screen" parent="UI" instance=ExtResource("2_1suv6")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -129.0
+offset_right = -11.0
+offset_bottom = -98.0
+grow_horizontal = 0
+
+[node name="GridContainer" parent="UI" instance=ExtResource("1_oasu4")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -153.0
+offset_top = -92.0
+offset_right = -47.0
+offset_bottom = 14.0
+grow_horizontal = 0
+
+[node name="Control" parent="UI" instance=ExtResource("4_8wyk0")]
+layout_mode = 1
+offset_left = 190.0
+offset_top = -89.0
+offset_right = 209.0
+offset_bottom = -45.0
+
+[node name="TextureButton" parent="UI" instance=ExtResource("5_c8hxe")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -21.0
+offset_right = -9.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

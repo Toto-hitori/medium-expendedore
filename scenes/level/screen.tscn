@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgkejuc72cp6"]
+
+[ext_resource type="Texture2D" uid="uid://bpxdcyn7ptlho" path="res://assets/screen-texture.png" id="1_x8m7y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0th2k"]
+font_size = 11
+
+[node name="screen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1054.0
+offset_bottom = -624.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8m7y")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cuadrado trufa"
+label_settings = SubResource("LabelSettings_0th2k")
+horizontal_alignment = 1
+vertical_alignment = 1

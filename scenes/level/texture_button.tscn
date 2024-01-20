@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqwiddlyfnxh1"]
+
+[ext_resource type="Texture2D" uid="uid://dd2fu3tirxlmk" path="res://assets/cashback_button.png" id="1_eg5ww"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 30.0
+offset_bottom = 30.0
+texture_normal = ExtResource("1_eg5ww")
