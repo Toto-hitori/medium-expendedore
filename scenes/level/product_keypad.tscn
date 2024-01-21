@@ -10,6 +10,7 @@ size = Vector2(114.5, 115)
 script = ExtResource("1_um7c0")
 
 [node name="KeyboardArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyboardArea"]
 shape = SubResource("RectangleShape2D_558hn")
