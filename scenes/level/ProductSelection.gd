@@ -3,7 +3,7 @@ class_name ProductSelection
 
 var products : Array[Product]
 var current_selection : String = ""
-var selected_product = ""
+var selected_product: String   = ""
 func _init(): 
 	products = [Product.new('Cuadrado trufa',"11",1)]
 
@@ -13,7 +13,7 @@ func add_key(val : int):
 		if(product_selected()):
 			selected_product = get_product_with_code(current_selection)
 		
-func product_selected():
+func product_selected() -> bool:
 	return current_selection.length() == 2
 
 func get_product_with_code(code : String):
