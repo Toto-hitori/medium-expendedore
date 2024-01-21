@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvlc4p8aefy21"]
+[gd_scene load_steps=4 format=3 uid="uid://dvlc4p8aefy21"]
 
+[ext_resource type="Script" path="res://scenes/items/cuadrado_trufa.gd" id="1_gf8lh"]
 [ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="1_sg3y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3qo8"]
@@ -9,6 +10,7 @@ size = Vector2(26, 39)
 collision_layer = 4
 collision_mask = 4
 gravity_scale = 0.5
+script = ExtResource("1_gf8lh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sg3y4")
