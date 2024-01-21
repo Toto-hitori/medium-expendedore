@@ -99,6 +99,7 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_khdhc")
 metadata/_edit_lock_ = true
 
+[connection signal="key_pressed" from="UI/ProductKeyboad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyboad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyboad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
 [connection signal="body_entered" from="ObjectArea" to="Hand" method="_on_object_area_body_entered"]

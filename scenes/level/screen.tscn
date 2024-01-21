@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkgkejuc72cp6"]
+[gd_scene load_steps=5 format=3 uid="uid://dkgkejuc72cp6"]
 
 [ext_resource type="Texture2D" uid="uid://bpxdcyn7ptlho" path="res://assets/screen-texture.png" id="1_x8m7y"]
+[ext_resource type="Script" path="res://scenes/level/screen.gd" id="2_ppk8e"]
+[ext_resource type="Script" path="res://scenes/level/ProductSelection.gd" id="3_dm612"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0th2k"]
 font_size = 11
@@ -14,6 +16,7 @@ offset_bottom = -624.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x8m7y")
+script = ExtResource("2_ppk8e")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -26,3 +29,6 @@ text = "Cuadrado trufa"
 label_settings = SubResource("LabelSettings_0th2k")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProductSelection" type="Node" parent="."]
+script = ExtResource("3_dm612")

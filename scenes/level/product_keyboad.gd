@@ -8,7 +8,7 @@ func _ready():
 	for key in $Keys.get_children():
 		key.connect("key_entered",_on_key_entered)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("click") and selected_key != 0:
 		key_pressed.emit(selected_key)
 	
