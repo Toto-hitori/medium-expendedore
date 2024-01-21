@@ -6,7 +6,7 @@ var products : ProductSelection
 func _init():
 	products = ProductSelection.new()
 
-func _process(delta):
+func _process(_delta):
 	if(!products.product_selected()):
 		if(products.current_selection != ""):
 			set_text(products.current_selection)

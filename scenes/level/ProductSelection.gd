@@ -11,7 +11,7 @@ func add_key(val : int):
 	if(!product_selected()):
 		current_selection += str(val)
 		if(product_selected()):
-			selected_product = get_product_with_code(current_selection)
+			$"CheckProductTimer".start()
 		
 func product_selected() -> bool:
 	return current_selection.length() == 2
@@ -19,3 +19,8 @@ func product_selected() -> bool:
 func get_product_with_code(code : String):
 	var p : Array[Product] = products.filter(func(product: Product):return product.code == current_selection)
 	return "Product not found" if p.size() == 0 else p[0].name
+
+
+
+func _on_check_product_timer_timeout():
+	selected_product = get_product_with_code(current_selection)
