@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpddxgjlmomef"]
+
+[ext_resource type="Texture2D" uid="uid://pkg22rbyktof" path="res://assets/hand.png" id="1_jfutt"]
+[ext_resource type="Script" path="res://scenes/character/hand.gd" id="1_stnn5"]
+[ext_resource type="Texture2D" uid="uid://cellsx6cj71wf" path="res://assets/mouse.png" id="3_esic1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mas8q"]
+radius = 6.0
+
+[node name="Hand" type="CharacterBody2D"]
+script = ExtResource("1_stnn5")
+
+[node name="HandSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, 23)
+texture = ExtResource("1_jfutt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mas8q")
+
+[node name="MouseSprite" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("3_esic1")
