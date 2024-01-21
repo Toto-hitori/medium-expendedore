@@ -1,17 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=14 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
 [ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="2_5y46c"]
+[ext_resource type="PackedScene" uid="uid://dvlc4p8aefy21" path="res://scenes/items/cuadrado_trufa.tscn" id="2_jt7yu"]
+[ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="2_litaf"]
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
+[ext_resource type="Texture2D" uid="uid://bxkdty2usjnni" path="res://assets/vending-glare.png" id="4_iutuq"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
 [ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
 [ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
-size = Vector2(123, 70)
+[ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
 
 [node name="VendingMachine" type="Node2D"]
 position = Vector2(224, 134)
@@ -20,9 +21,29 @@ position = Vector2(224, 134)
 texture = ExtResource("1_y1twq")
 metadata/_edit_lock_ = true
 
+[node name="PlacedProducts" type="Node2D" parent="."]
+
+[node name="CuadradoTrufa" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-176, -93)
+texture = ExtResource("2_litaf")
+
+[node name="CuadradoTrufa2" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-181, -93)
+texture = ExtResource("2_litaf")
+
 [node name="ProductStands" type="Sprite2D" parent="."]
 position = Vector2(-89, 0)
 texture = ExtResource("2_5y46c")
+
+[node name="FallingProducts" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
+position = Vector2(-185, -95)
+
+[node name="VendingGlare" type="Sprite2D" parent="."]
+texture = ExtResource("4_iutuq")
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
@@ -96,16 +117,8 @@ metadata/_edit_lock_ = true
 [node name="Hand" parent="." instance=ExtResource("8_y5ov5")]
 metadata/_edit_lock_ = true
 
-[node name="ObjectArea" type="Area2D" parent="."]
-position = Vector2(117, 89)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectArea"]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_khdhc")
-metadata/_edit_lock_ = true
+[node name="ObjectHatch" parent="." instance=ExtResource("13_l0x3d")]
 
 [connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
-[connection signal="body_entered" from="ObjectArea" to="Hand" method="_on_object_area_body_entered"]
-[connection signal="body_exited" from="ObjectArea" to="Hand" method="_on_object_area_body_exited"]

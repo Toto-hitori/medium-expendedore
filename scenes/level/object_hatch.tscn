@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddrlyeb6utsci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
+size = Vector2(123, 70)
+
+[node name="ObjectHatch" type="Node2D"]
+
+[node name="ObjectArea" type="Area2D" parent="."]
+position = Vector2(117, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectArea"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_khdhc")
+metadata/_edit_lock_ = true
