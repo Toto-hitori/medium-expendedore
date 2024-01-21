@@ -9,8 +9,8 @@ func _physics_process(delta):
 
 func _on_keyboard_area_body_entered(body):
 	print('area_entered')
-	$HandSprite.visible = false
-	$MouseSprite.visible = true
+	$HandSprite.visible =  true
+	$MouseSprite.visible = false
 
 
 func _on_keyboard_area_body_exited(body):
@@ -19,9 +19,9 @@ func _on_keyboard_area_body_exited(body):
 
 
 func _on_object_area_body_entered(body):
-	$HandSprite.
-	$HandSprite.visible = false
-	$MouseSprite.visible = true
+	$HandSprite.frame = 1
+	$HandSprite.visible = true
+	$MouseSprite.visible = false
 
 
 func _on_object_area_body_exited(body):
