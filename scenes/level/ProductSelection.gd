@@ -9,4 +9,3 @@ func _init():
 
 func add_key(val : int):
 	current_selection += str(val)
-	print(current_selection)
