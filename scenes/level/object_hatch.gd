@@ -12,6 +12,7 @@ func _on_object_area_body_exited(_body):
 func _on_falling_item_detection_area_body_entered(body):
 	if(body is Item):
 		$ReadyProducts.add_child(body.scene_load.instantiate())
+		$ReadyProducts.get_child(0).rotation = 3.14/2
 		body.queue_free()
 		
 	
