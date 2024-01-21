@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=12 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="PackedScene" uid="uid://ct15f33gae1o4" path="res://scenes/level/keyboard.tscn" id="1_oasu4"]
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
@@ -12,6 +12,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0txt"]
 size = Vector2(114.5, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
+size = Vector2(123, 70)
 
 [node name="VendingMachine" type="Node2D"]
 position = Vector2(224, 134)
@@ -101,11 +104,22 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="KeyboardArea" type="Area2D" parent="."]
+position = Vector2(115, -23)
 script = ExtResource("9_grttk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyboardArea"]
-position = Vector2(115, -22)
 shape = SubResource("RectangleShape2D_g0txt")
+metadata/_edit_lock_ = true
+
+[node name="ObjectArea" type="Area2D" parent="."]
+position = Vector2(117, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectArea"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_khdhc")
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="KeyboardArea" to="Hand" method="_on_keyboard_area_body_entered"]
 [connection signal="body_exited" from="KeyboardArea" to="Hand" method="_on_keyboard_area_body_exited"]
+[connection signal="body_entered" from="ObjectArea" to="Hand" method="_on_object_area_body_entered"]
+[connection signal="body_exited" from="ObjectArea" to="Hand" method="_on_object_area_body_exited"]
