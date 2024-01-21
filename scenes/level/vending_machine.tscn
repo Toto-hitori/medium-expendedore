@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=8 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="PackedScene" uid="uid://ct15f33gae1o4" path="res://scenes/level/keyboard.tscn" id="1_oasu4"]
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
+[ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
+[ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
 
 [node name="VendingMachine" type="Node2D"]
 
@@ -39,10 +41,10 @@ anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -129.0
-offset_right = -11.0
-offset_bottom = -98.0
+offset_left = -161.0
+offset_top = -118.0
+offset_right = -13.0
+offset_bottom = -83.0
 grow_horizontal = 0
 
 [node name="GridContainer" parent="UI" instance=ExtResource("1_oasu4")]
@@ -50,18 +52,18 @@ layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -153.0
-offset_top = -92.0
-offset_right = -47.0
-offset_bottom = 14.0
+offset_left = -161.0
+offset_top = -75.0
+offset_right = -55.0
+offset_bottom = 31.0
 grow_horizontal = 0
 
 [node name="Control" parent="UI" instance=ExtResource("4_8wyk0")]
 layout_mode = 1
-offset_left = 190.0
-offset_top = -89.0
-offset_right = 209.0
-offset_bottom = -45.0
+offset_left = 191.0
+offset_top = -65.0
+offset_right = 210.0
+offset_bottom = -20.0
 
 [node name="TextureButton" parent="UI" instance=ExtResource("5_c8hxe")]
 layout_mode = 1
@@ -71,11 +73,17 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -39.0
-offset_top = -21.0
+offset_top = -4.0
 offset_right = -9.0
-offset_bottom = 9.0
+offset_bottom = 26.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="ProductExit" parent="UI" instance=ExtResource("6_kk8vr")]
+position = Vector2(341, 223)
+
+[node name="CoinExit" parent="UI" instance=ExtResource("7_lfk0p")]
+position = Vector2(427, 218)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

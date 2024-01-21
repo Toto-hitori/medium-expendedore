@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c86nrq0kp3c56"]
+
+[ext_resource type="Texture2D" uid="uid://b6e6pv27o68pw" path="res://assets/product_exit.png" id="1_enr03"]
+
+[node name="ProductExit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_enr03")
