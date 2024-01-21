@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=11 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="PackedScene" uid="uid://ct15f33gae1o4" path="res://scenes/level/keyboard.tscn" id="1_oasu4"]
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
@@ -7,11 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
 [ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
 [ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
+[ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
+[ext_resource type="Script" path="res://scenes/level/KeyboardArea.gd" id="9_grttk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0txt"]
+size = Vector2(114.5, 115)
 
 [node name="VendingMachine" type="Node2D"]
+position = Vector2(224, 134)
 
 [node name="VendingMachine" type="Sprite2D" parent="."]
 texture = ExtResource("1_y1twq")
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
@@ -34,6 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_lock_ = true
 
 [node name="screen" parent="UI" instance=ExtResource("2_1suv6")]
 layout_mode = 1
@@ -87,5 +95,17 @@ position = Vector2(427, 218)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Hand" parent="." instance=ExtResource("8_y5ov5")]
+metadata/_edit_lock_ = true
+
+[node name="KeyboardArea" type="Area2D" parent="."]
+script = ExtResource("9_grttk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyboardArea"]
+position = Vector2(115, -22)
+shape = SubResource("RectangleShape2D_g0txt")
+
+[connection signal="body_entered" from="KeyboardArea" to="Hand" method="_on_keyboard_area_body_entered"]
+[connection signal="body_exited" from="KeyboardArea" to="Hand" method="_on_keyboard_area_body_exited"]
