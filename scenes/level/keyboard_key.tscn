@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://brtystp10m8r3"]
+
+[ext_resource type="Script" path="res://scenes/level/keyboard_key.gd" id="1_k7yrc"]
+[ext_resource type="Texture2D" uid="uid://bmbgo4s0yoxew" path="res://assets/button.png" id="1_lkf41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m72ql"]
+size = Vector2(30, 30)
+
+[node name="KeyboardKey" type="Node2D"]
+script = ExtResource("1_k7yrc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_m72ql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lkf41")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

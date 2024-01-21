@@ -8,7 +8,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_keyboard_area_body_entered(body):
-	print('area_entered')
+	$HandSprite.frame = 0
 	$HandSprite.visible =  true
 	$MouseSprite.visible = false
 
