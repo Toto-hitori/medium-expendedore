@@ -10,7 +10,7 @@
 
 [node name="VendingMachine" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="VendingMachine" type="Sprite2D" parent="."]
 texture = ExtResource("1_y1twq")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -87,3 +87,5 @@ position = Vector2(427, 218)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
