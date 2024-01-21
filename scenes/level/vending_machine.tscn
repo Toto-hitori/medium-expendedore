@@ -122,3 +122,5 @@ metadata/_edit_lock_ = true
 [connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
+[connection signal="hand_entered" from="ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
+[connection signal="hand_left" from="ObjectHatch" to="Hand" method="_on_object_hatch_hand_left"]

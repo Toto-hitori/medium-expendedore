@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddrlyeb6utsci"]
+[gd_scene load_steps=3 format=3 uid="uid://ddrlyeb6utsci"]
+
+[ext_resource type="Script" path="res://scenes/level/object_hatch.gd" id="1_3u6t6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
 size = Vector2(123, 70)
 
 [node name="ObjectHatch" type="Node2D"]
+script = ExtResource("1_3u6t6")
 
 [node name="ObjectArea" type="Area2D" parent="."]
 position = Vector2(117, 89)
@@ -12,3 +15,6 @@ position = Vector2(117, 89)
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_khdhc")
 metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="ObjectArea" to="." method="_on_object_area_body_entered"]
+[connection signal="body_exited" from="ObjectArea" to="." method="_on_object_area_body_exited"]

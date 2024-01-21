@@ -22,5 +22,5 @@ func _on_product_keyboad_key_pressed(selected_key):
 func _on_products_selection_invalid_product():
 	set_text("Producto invalido")
 
-func _on_products_selection_product_select(name):
-	set_text(name)
+func _on_products_selection_product_select(_name):
+	set_text(_name)
