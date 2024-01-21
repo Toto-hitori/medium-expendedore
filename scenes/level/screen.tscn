@@ -33,7 +33,11 @@ vertical_alignment = 1
 [node name="ProductsSelection" type="Node" parent="."]
 script = ExtResource("3_dm612")
 
-[node name="CheckProductTimer" type="Timer" parent="ProductsSelection"]
+[node name="ProductSelectionTimer" type="Timer" parent="ProductsSelection"]
 one_shot = true
 
-[connection signal="timeout" from="ProductsSelection/CheckProductTimer" to="ProductsSelection" method="_on_check_product_timer_timeout"]
+[node name="ResetTimer" type="Timer" parent="ProductsSelection"]
+one_shot = true
+
+[connection signal="timeout" from="ProductsSelection/ProductSelectionTimer" to="ProductsSelection" method="_on_product_selection_timer_timeout"]
+[connection signal="timeout" from="ProductsSelection/ResetTimer" to="ProductsSelection" method="_on_reset_timer_timeout"]

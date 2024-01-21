@@ -3,8 +3,8 @@ class_name Screen
 
 var products : ProductSelection
 
-func _init():
-	products = ProductSelection.new()
+func _ready():
+	products = $ProductsSelection
 
 func _process(_delta):
 	if(!products.product_selected()):
