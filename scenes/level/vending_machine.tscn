@@ -82,8 +82,7 @@ position = Vector2(341, 223)
 position = Vector2(427, 218)
 
 [node name="ProductKeyboad" parent="UI" instance=ExtResource("9_h5rwr")]
-position = Vector2(338, 111)
-metadata/_edit_lock_ = true
+position = Vector2(342, 112)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
