@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
 [ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
-[ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keyboad.tscn" id="9_h5rwr"]
+[ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
 size = Vector2(123, 70)
@@ -81,7 +81,7 @@ position = Vector2(341, 223)
 [node name="CoinExit" parent="UI" instance=ExtResource("7_lfk0p")]
 position = Vector2(427, 218)
 
-[node name="ProductKeyboad" parent="UI" instance=ExtResource("9_h5rwr")]
+[node name="ProductKeyPad" parent="UI" instance=ExtResource("9_h5rwr")]
 position = Vector2(342, 112)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -99,8 +99,8 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_khdhc")
 metadata/_edit_lock_ = true
 
-[connection signal="key_pressed" from="UI/ProductKeyboad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
-[connection signal="keyboard_entered" from="UI/ProductKeyboad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
-[connection signal="keyboard_exited" from="UI/ProductKeyboad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
+[connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
+[connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
+[connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
 [connection signal="body_entered" from="ObjectArea" to="Hand" method="_on_object_area_body_entered"]
 [connection signal="body_exited" from="ObjectArea" to="Hand" method="_on_object_area_body_exited"]
