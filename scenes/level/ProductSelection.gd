@@ -1,7 +1,5 @@
 extends Node
 class_name ProductSelection
-
-@onready var timer = $CheckProductTimer
 var products : Array[Product]
 var current_selection : String = ""
 var selected_product: Product 
