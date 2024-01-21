@@ -7,17 +7,6 @@ func _physics_process(delta):
 	velocity =  (get_global_mouse_position() - global_position)  * 8
 	move_and_slide()
 
-func _on_keyboard_area_body_entered(body):
-	$HandSprite.frame = 0
-	$HandSprite.visible =  true
-	$MouseSprite.visible = false
-
-
-func _on_keyboard_area_body_exited(body):
-	$HandSprite.visible = false
-	$MouseSprite.visible = true
-
-
 func _on_object_area_body_entered(body):
 	$HandSprite.frame = 1
 	$HandSprite.visible = true
@@ -25,5 +14,16 @@ func _on_object_area_body_entered(body):
 
 
 func _on_object_area_body_exited(body):
+	$HandSprite.visible = false
+	$MouseSprite.visible = true
+
+
+func _on_product_keyboad_keyboard_entered():
+	$HandSprite.frame = 0
+	$HandSprite.visible =  true
+	$MouseSprite.visible = false
+
+
+func _on_product_keyboad_keyboard_exited():
 	$HandSprite.visible = false
 	$MouseSprite.visible = true

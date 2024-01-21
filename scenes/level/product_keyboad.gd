@@ -13,4 +13,4 @@ func _on_keyboard_area_body_entered(body):
 		
 func _on_keyboard_area_body_exited(body):
 	if body is Hand:
-		keyboard_entered.emit()
+		keyboard_exited.emit()

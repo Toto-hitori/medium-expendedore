@@ -1,7 +1,7 @@
 extends Node2D
 class_name KeyboardKey
 
-@export var val = ""
+@export var val: int = 0 
 
 func _ready():
-	$Label.text = val
+	$Label.text = str(val)
