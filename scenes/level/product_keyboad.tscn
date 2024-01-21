@@ -19,38 +19,38 @@ metadata/_edit_lock_ = true
 
 [node name="1" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(-38, 37)
-val = "1"
+val = 1
 
 [node name="2" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(0, 37)
-val = "2"
+val = 2
 
 [node name="3" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(38, 37)
-val = "3"
+val = 3
 
 [node name="4" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(-38, 0)
-val = "4"
+val = 4
 
 [node name="5" parent="Keys" instance=ExtResource("1_cx8gy")]
-val = "5"
+val = 5
 
 [node name="6" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(38, 0)
-val = "6"
+val = 6
 
 [node name="7" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(-38, -38)
-val = "7"
+val = 7
 
 [node name="8" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(0, -38)
-val = "8"
+val = 8
 
 [node name="9" parent="Keys" instance=ExtResource("1_cx8gy")]
 position = Vector2(38, -38)
-val = "9"
+val = 9
 
 [connection signal="body_entered" from="KeyboardArea" to="." method="_on_keyboard_area_body_entered"]
 [connection signal="body_exited" from="KeyboardArea" to="." method="_on_keyboard_area_body_exited"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmbgo4s0yoxew" path="res://assets/button.png" id="1_lkf41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m72ql"]
-size = Vector2(30, 30)
+size = Vector2(24, 24)
 
 [node name="KeyboardKey" type="Node2D"]
 script = ExtResource("1_k7yrc")
@@ -25,3 +25,7 @@ offset_bottom = 15.0
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
