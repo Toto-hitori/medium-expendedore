@@ -8,11 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
 [ext_resource type="Texture2D" uid="uid://bxkdty2usjnni" path="res://assets/vending-glare.png" id="4_iutuq"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
-[ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
 [ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 [ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1afir"]
+size = Vector2(269, 20)
 
 [node name="VendingMachine" type="Node2D"]
 position = Vector2(224, 134)
@@ -34,16 +36,6 @@ texture = ExtResource("2_litaf")
 [node name="ProductStands" type="Sprite2D" parent="."]
 position = Vector2(-89, 0)
 texture = ExtResource("2_5y46c")
-
-[node name="FallingProducts" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
-
-[node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
-position = Vector2(-185, -95)
-
-[node name="VendingGlare" type="Sprite2D" parent="."]
-texture = ExtResource("4_iutuq")
-metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
@@ -101,14 +93,24 @@ offset_bottom = 26.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="ProductExit" parent="UI" instance=ExtResource("6_kk8vr")]
-position = Vector2(341, 223)
-
 [node name="CoinExit" parent="UI" instance=ExtResource("7_lfk0p")]
 position = Vector2(427, 218)
 
+[node name="ObjectHatch" parent="UI" instance=ExtResource("13_l0x3d")]
+position = Vector2(342, 224)
+
 [node name="ProductKeyPad" parent="UI" instance=ExtResource("9_h5rwr")]
 position = Vector2(342, 112)
+
+[node name="FallingProducts" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
+position = Vector2(-185, -95)
+
+[node name="VendingGlare" type="Sprite2D" parent="."]
+texture = ExtResource("4_iutuq")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -117,10 +119,17 @@ metadata/_edit_lock_ = true
 [node name="Hand" parent="." instance=ExtResource("8_y5ov5")]
 metadata/_edit_lock_ = true
 
-[node name="ObjectHatch" parent="." instance=ExtResource("13_l0x3d")]
+[node name="FallingItemDetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingItemDetectionArea"]
+position = Vector2(-88.5, 144)
+shape = SubResource("RectangleShape2D_1afir")
+
+[connection signal="hand_entered" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
+[connection signal="hand_left" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_left"]
 [connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
-[connection signal="hand_entered" from="ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
-[connection signal="hand_left" from="ObjectHatch" to="Hand" method="_on_object_hatch_hand_left"]
+[connection signal="body_entered" from="FallingItemDetectionArea" to="UI/ObjectHatch" method="_on_falling_item_detection_area_body_entered"]

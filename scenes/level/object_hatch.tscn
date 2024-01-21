@@ -1,20 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddrlyeb6utsci"]
+[gd_scene load_steps=5 format=3 uid="uid://ddrlyeb6utsci"]
 
 [ext_resource type="Script" path="res://scenes/level/object_hatch.gd" id="1_3u6t6"]
+[ext_resource type="Texture2D" uid="uid://b6e6pv27o68pw" path="res://assets/product_exit.png" id="2_bqc6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khdhc"]
 size = Vector2(123, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni4rt"]
+size = Vector2(132, 13)
 
 [node name="ObjectHatch" type="Node2D"]
 script = ExtResource("1_3u6t6")
 
 [node name="ObjectArea" type="Area2D" parent="."]
-position = Vector2(117, 89)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectArea"]
-position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_khdhc")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 36.5)
+shape = SubResource("RectangleShape2D_ni4rt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bqc6v")
+metadata/_edit_lock_ = true
+
+[node name="ReadyProducts" type="Node2D" parent="."]
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(0, -31)
 
 [connection signal="body_entered" from="ObjectArea" to="." method="_on_object_area_body_entered"]
 [connection signal="body_exited" from="ObjectArea" to="." method="_on_object_area_body_exited"]
