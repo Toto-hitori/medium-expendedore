@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvlc4p8aefy21"]
+
+[ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="1_sg3y4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3qo8"]
+size = Vector2(26, 39)
+
+[node name="CuadradoTrufa" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sg3y4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_i3qo8")
