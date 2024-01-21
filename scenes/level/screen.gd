@@ -11,7 +11,7 @@ func _process(_delta):
 		if(products.current_selection != ""):
 			set_text(products.current_selection)
 		else:
-			set_text("Selecciona un producto")
+			set_text("Selecciona un \n producto")
 
 func set_text(text : String):
 	$Label.text = text

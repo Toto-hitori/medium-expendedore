@@ -10,7 +10,7 @@ signal product_select(name)
 signal pick_product(val)
 signal invalid_product()
 func _init(): 
-	products = [Product.new('Cuadrado trufa',"11",1)]
+	products = [Product.new('Cuadrado\ntrufa',"11",1)]
 
 func add_key(val : int):
 	if(current_selection.length() < 2):
