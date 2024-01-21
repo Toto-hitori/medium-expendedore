@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=11 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
+[ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="2_5y46c"]
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
 [ext_resource type="PackedScene" uid="uid://c86nrq0kp3c56" path="res://scenes/level/product_exit.tscn" id="6_kk8vr"]
@@ -18,6 +19,10 @@ position = Vector2(224, 134)
 [node name="VendingMachine" type="Sprite2D" parent="."]
 texture = ExtResource("1_y1twq")
 metadata/_edit_lock_ = true
+
+[node name="ProductStands" type="Sprite2D" parent="."]
+position = Vector2(-89, 0)
+texture = ExtResource("2_5y46c")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
