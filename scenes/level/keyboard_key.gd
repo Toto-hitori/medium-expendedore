@@ -7,6 +7,9 @@ signal key_entered(val)
 func _ready():
 	$Label.text = str(val)
 
+func press_animation():
+	$AnimationPlayer.play("press_button")
+
 func _on_area_2d_body_entered(body):
 	if body is Hand:
 		key_entered.emit(val)

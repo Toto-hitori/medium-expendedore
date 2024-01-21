@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brtystp10m8r3"]
+[gd_scene load_steps=8 format=3 uid="uid://brtystp10m8r3"]
 
 [ext_resource type="Script" path="res://scenes/level/keyboard_key.gd" id="1_k7yrc"]
 [ext_resource type="Texture2D" uid="uid://bmbgo4s0yoxew" path="res://assets/button.png" id="1_lkf41"]
@@ -12,6 +12,50 @@ font = ExtResource("3_4c13b")
 font_size = 12
 font_color = Color(0.239216, 0, 0.239216, 1)
 
+[sub_resource type="Animation" id="Animation_uunsb"]
+resource_name = "press_button"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-14, -12), Vector2(-15, -13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3vdkg"]
+_data = {
+"press_button": SubResource("Animation_uunsb")
+}
+
 [node name="KeyboardKey" type="Node2D"]
 script = ExtResource("1_k7yrc")
 
@@ -22,6 +66,7 @@ shape = SubResource("RectangleShape2D_m72ql")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lkf41")
+hframes = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = -15.0
@@ -32,5 +77,10 @@ text = "2"
 label_settings = SubResource("LabelSettings_kcodm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3vdkg")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

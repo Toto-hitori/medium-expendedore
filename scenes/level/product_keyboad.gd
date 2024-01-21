@@ -10,6 +10,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("click") and selected_key != 0:
+		$Keys.get_child(selected_key-1).press_animation()
 		key_pressed.emit(selected_key)
 	
 func _on_keyboard_area_body_entered(body):
