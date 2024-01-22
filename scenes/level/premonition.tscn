@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cji8701owycvy"]
+[gd_scene load_steps=6 format=3 uid="uid://cji8701owycvy"]
 
 [ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="1_j1ss3"]
 [ext_resource type="Texture2D" uid="uid://drqi62ft2jll7" path="res://assets/secret-11.png" id="1_qis12"]
+[ext_resource type="Texture2D" uid="uid://cb0kd8u5ixxwm" path="res://assets/think_background.png" id="3_07ads"]
 [ext_resource type="Texture2D" uid="uid://cpo3gqxkt5ar1" path="res://assets/Thinking_spr.png" id="3_s3f01"]
+[ext_resource type="Texture2D" uid="uid://oa8ldgo23xsh" path="res://assets/Thinking_hands.png" id="5_65e4c"]
 
 [node name="Premonition" type="Node2D"]
 position = Vector2(223, 134)
@@ -10,7 +12,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_j1ss3")
-position = Vector2(-29, 10)
+position = Vector2(-56, 5)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_qis12")
 
@@ -19,19 +21,35 @@ zoom = Vector2(3, 3)
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 124.0
+visible = false
+offset_left = 99.0
 offset_top = -144.0
-offset_right = 263.0
+offset_right = 238.0
 offset_bottom = 164.0
 color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -311.0
-offset_top = -144.0
-offset_right = -172.0
-offset_bottom = 164.0
+visible = false
+offset_left = -340.0
+offset_top = -152.0
+offset_right = -201.0
+offset_bottom = 156.0
 color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="Foreground" type="Sprite2D" parent="."]
+material = ExtResource("1_j1ss3")
+position = Vector2(0.999991, 1.00001)
+scale = Vector2(1.02691, 1.07463)
+texture = ExtResource("3_07ads")
+metadata/_edit_lock_ = true
 
 [node name="Character" type="Sprite2D" parent="."]
 position = Vector2(180, 88)
 texture = ExtResource("3_s3f01")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+position = Vector2(1, -3)
+texture = ExtResource("5_65e4c")
+
+[node name="HandAnimationPlayer" type="AnimationPlayer" parent="Character"]
