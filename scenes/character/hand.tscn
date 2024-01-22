@@ -21,5 +21,5 @@ hframes = 2
 shape = SubResource("CircleShape2D_mas8q")
 
 [node name="MouseSprite" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
+position = Vector2(5, 6)
 texture = ExtResource("3_esic1")
