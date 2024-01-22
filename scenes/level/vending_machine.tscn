@@ -51,11 +51,11 @@ position = Vector2(-183, 35)
 texture = ExtResource("3_p1gsl")
 
 [node name="KindaGood3" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-46, -32)
+position = Vector2(-58, -32)
 texture = ExtResource("5_yqe8h")
 
 [node name="KindaGood2" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-51, -31)
+position = Vector2(-55, -30)
 rotation = -0.0920373
 texture = ExtResource("5_yqe8h")
 
