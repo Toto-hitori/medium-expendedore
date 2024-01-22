@@ -39,7 +39,7 @@ position = Vector2(-176, -93)
 texture = ExtResource("2_litaf")
 
 [node name="CuadradoTrufa2" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-181, -93)
+position = Vector2(-184, -93)
 texture = ExtResource("2_litaf")
 
 [node name="Pipas" type="Sprite2D" parent="PlacedProducts"]
@@ -136,6 +136,7 @@ position = Vector2(342, 112)
 metadata/_edit_lock_ = true
 
 [node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
+visible = false
 position = Vector2(-185, -95)
 rotation = -0.191986
 

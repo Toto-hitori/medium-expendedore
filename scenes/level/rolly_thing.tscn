@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://diw4bok3236vj"]
+[gd_scene load_steps=2 format=3 uid="uid://diw4bok3236vj"]
+
+[ext_resource type="Texture2D" uid="uid://bphpkudqxrps4" path="res://assets/rolly_thing.png" id="1_a5jsj"]
 
 [node name="RollyThing" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a5jsj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
