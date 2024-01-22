@@ -2,7 +2,7 @@ extends TextureRect
 class_name Screen
 
 var products : ProductSelection
-
+signal release_product(code)
 func _ready():
 	products = $ProductsSelection
 
@@ -24,3 +24,6 @@ func _on_products_selection_invalid_product():
 
 func _on_products_selection_product_select(_name):
 	set_text(_name)
+
+func _on_products_selection_pick_product(code : String):
+	release_product.emit(code)

@@ -8,7 +8,10 @@ signal product_select(name)
 signal pick_product(val)
 signal invalid_product()
 func _init(): 
-	products = [Product.new('Cuadrado\ntrufa',"11",1)]
+	products = [Product.new('Cuadrado\ntrufa',"11",1),
+		Product.new('Kinda\ngood',"23",1),
+		Product.new('Pan de\npipas',"31",1)
+	]
 
 func add_key(val : int):
 	if(current_selection.length() < 2):
@@ -37,6 +40,7 @@ func ask_for_payment():
 		$ResetTimer.start()
 	else:
 		product_select.emit(selected_product.name)
+		pick_product.emit(selected_product.code)
 		$ResetTimer.start()
 
 func _on_product_selection_timer_timeout():

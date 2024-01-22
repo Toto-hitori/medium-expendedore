@@ -50,6 +50,7 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="invalid_product" from="ProductsSelection" to="." method="_on_products_selection_invalid_product"]
+[connection signal="pick_product" from="ProductsSelection" to="." method="_on_products_selection_pick_product"]
 [connection signal="product_select" from="ProductsSelection" to="." method="_on_products_selection_product_select"]
 [connection signal="timeout" from="ProductsSelection/ProductSelectionTimer" to="ProductsSelection" method="_on_product_selection_timer_timeout"]
 [connection signal="timeout" from="ProductsSelection/ResetTimer" to="ProductsSelection" method="_on_reset_timer_timeout"]

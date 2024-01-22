@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://1xmf4ctlhu8l"]
+[gd_scene load_steps=4 format=3 uid="uid://1xmf4ctlhu8l"]
 
 [ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="1_cq3i5"]
+[ext_resource type="Script" path="res://scenes/level/product_stands.gd" id="1_n6v1c"]
 [ext_resource type="PackedScene" uid="uid://diw4bok3236vj" path="res://scenes/level/rolly_thing.tscn" id="2_xqesg"]
 
 [node name="ProductStands" type="Node2D"]
+script = ExtResource("1_n6v1c")
 
 [node name="ProductStandsSpr" type="Sprite2D" parent="."]
 texture = ExtResource("1_cq3i5")
@@ -69,3 +71,6 @@ position = Vector2(29, -87)
 
 [node name="RollyThing44" parent="RollyThings/Stand 4" instance=ExtResource("2_xqesg")]
 position = Vector2(94, -87)
+
+[node name="FallingProducts" type="Node2D" parent="."]
+metadata/_edit_lock_ = true

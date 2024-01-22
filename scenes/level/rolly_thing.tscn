@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://diw4bok3236vj"]
+[gd_scene load_steps=5 format=3 uid="uid://diw4bok3236vj"]
 
 [ext_resource type="Texture2D" uid="uid://bphpkudqxrps4" path="res://assets/rolly_thing.png" id="1_a5jsj"]
+[ext_resource type="Script" path="res://scenes/level/rolly_thing.gd" id="1_cy288"]
 
 [sub_resource type="Animation" id="Animation_lwuee"]
 resource_name = "roll"
@@ -24,6 +25,7 @@ _data = {
 }
 
 [node name="RollyThing" type="Node2D"]
+script = ExtResource("1_cy288")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a5jsj")
