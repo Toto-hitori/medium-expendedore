@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=18 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
-[ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="2_5y46c"]
 [ext_resource type="PackedScene" uid="uid://dvlc4p8aefy21" path="res://scenes/items/cuadrado_trufa.tscn" id="2_jt7yu"]
 [ext_resource type="Texture2D" uid="uid://damgant13uoo" path="res://assets/product-stands-back.png" id="2_ku7n8"]
 [ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="2_litaf"]
@@ -10,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
 [ext_resource type="Texture2D" uid="uid://bxkdty2usjnni" path="res://assets/vending-glare.png" id="4_iutuq"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
+[ext_resource type="Texture2D" uid="uid://c4308vlbvyw4r" path="res://assets/items/kinda_good.png" id="5_yqe8h"]
 [ext_resource type="PackedScene" uid="uid://b236sq6jj1nq0" path="res://scenes/level/coin_exit.tscn" id="7_lfk0p"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 [ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
 [ext_resource type="Texture2D" uid="uid://bsm37tyq2re7a" path="res://assets/exit-top_part.png" id="13_vuq33"]
+[ext_resource type="PackedScene" uid="uid://1xmf4ctlhu8l" path="res://scenes/level/product_stands.tscn" id="16_pvshj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1afir"]
 size = Vector2(269, 20)
@@ -49,16 +50,28 @@ texture = ExtResource("3_p1gsl")
 position = Vector2(-183, 35)
 texture = ExtResource("3_p1gsl")
 
-[node name="ProductStands" type="Sprite2D" parent="."]
-position = Vector2(-89, 0)
-texture = ExtResource("2_5y46c")
-metadata/_edit_lock_ = true
+[node name="KindaGood3" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-46, -32)
+texture = ExtResource("5_yqe8h")
+
+[node name="KindaGood2" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-51, -31)
+rotation = -0.0920373
+texture = ExtResource("5_yqe8h")
+
+[node name="KindaGood" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-56, -30)
+rotation = 0.196633
+texture = ExtResource("5_yqe8h")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
 
 [node name="Line2D2" type="Line2D" parent="."]
 points = PackedVector2Array(268, 160, 445, 160)
+
+[node name="ProductStands" parent="." instance=ExtResource("16_pvshj")]
+position = Vector2(-89, 0)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

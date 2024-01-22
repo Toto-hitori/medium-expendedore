@@ -15,6 +15,5 @@ func _on_falling_item_detection_area_body_entered(body):
 		item.rotation = 3.14/3
 		$ReadyProducts.add_child(item)
 		body.queue_free()
-		
 	
 
