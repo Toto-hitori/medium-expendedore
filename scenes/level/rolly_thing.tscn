@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://diw4bok3236vj"]
+
+[node name="RollyThing" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

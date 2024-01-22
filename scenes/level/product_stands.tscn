@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://1xmf4ctlhu8l"]
+[gd_scene load_steps=3 format=3 uid="uid://1xmf4ctlhu8l"]
 
 [ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="1_cq3i5"]
+[ext_resource type="PackedScene" uid="uid://diw4bok3236vj" path="res://scenes/level/rolly_thing.tscn" id="2_xqesg"]
 
 [node name="ProductStands" type="Node2D"]
 
 [node name="ProductStandsSpr" type="Sprite2D" parent="."]
 texture = ExtResource("1_cq3i5")
 metadata/_edit_lock_ = true
+
+[node name="RollyThings" type="Node2D" parent="."]
+
+[node name="RollyThing" parent="RollyThings" instance=ExtResource("2_xqesg")]
