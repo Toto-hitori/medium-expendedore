@@ -136,7 +136,6 @@ position = Vector2(342, 112)
 metadata/_edit_lock_ = true
 
 [node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
-visible = false
 position = Vector2(-185, -95)
 rotation = -0.191986
 
@@ -161,7 +160,7 @@ collision_mask = 4
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingItemDetectionArea"]
-position = Vector2(-88.5, 144)
+position = Vector2(-88, 162)
 shape = SubResource("RectangleShape2D_1afir")
 
 [connection signal="hand_entered" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
@@ -169,4 +168,5 @@ shape = SubResource("RectangleShape2D_1afir")
 [connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
+[connection signal="grab_object" from="Hand" to="UI/ObjectHatch" method="_on_hand_grab_object"]
 [connection signal="body_entered" from="FallingItemDetectionArea" to="UI/ObjectHatch" method="_on_falling_item_detection_area_body_entered"]
