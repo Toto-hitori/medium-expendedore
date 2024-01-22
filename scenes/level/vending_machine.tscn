@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=17 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
 [ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="2_5y46c"]
 [ext_resource type="PackedScene" uid="uid://dvlc4p8aefy21" path="res://scenes/items/cuadrado_trufa.tscn" id="2_jt7yu"]
+[ext_resource type="Texture2D" uid="uid://damgant13uoo" path="res://assets/product-stands-back.png" id="2_ku7n8"]
 [ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="2_litaf"]
+[ext_resource type="Texture2D" uid="uid://dr4prthqms3r8" path="res://assets/items/pan_pipas.png" id="3_p1gsl"]
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/coin_slot.tscn" id="4_8wyk0"]
 [ext_resource type="Texture2D" uid="uid://bxkdty2usjnni" path="res://assets/vending-glare.png" id="4_iutuq"]
 [ext_resource type="PackedScene" uid="uid://bqwiddlyfnxh1" path="res://scenes/level/texture_button.tscn" id="5_c8hxe"]
@@ -24,6 +26,11 @@ position = Vector2(224, 134)
 texture = ExtResource("1_y1twq")
 metadata/_edit_lock_ = true
 
+[node name="ProductStandsBack" type="Sprite2D" parent="."]
+position = Vector2(-89, 0)
+texture = ExtResource("2_ku7n8")
+metadata/_edit_lock_ = true
+
 [node name="PlacedProducts" type="Node2D" parent="."]
 
 [node name="CuadradoTrufa" type="Sprite2D" parent="PlacedProducts"]
@@ -34,9 +41,18 @@ texture = ExtResource("2_litaf")
 position = Vector2(-181, -93)
 texture = ExtResource("2_litaf")
 
+[node name="Pipas" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-179, 34)
+texture = ExtResource("3_p1gsl")
+
+[node name="Pipas2" type="Sprite2D" parent="PlacedProducts"]
+position = Vector2(-184, 35)
+texture = ExtResource("3_p1gsl")
+
 [node name="ProductStands" type="Sprite2D" parent="."]
 position = Vector2(-89, 0)
 texture = ExtResource("2_5y46c")
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(270, 0, 270, 268)
@@ -124,6 +140,7 @@ metadata/_edit_lock_ = true
 [node name="FallingItemDetectionArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 4
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingItemDetectionArea"]
 position = Vector2(-88.5, 144)
