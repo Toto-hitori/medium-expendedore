@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=19 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 [ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
 [ext_resource type="Texture2D" uid="uid://bsm37tyq2re7a" path="res://assets/exit-top_part.png" id="13_vuq33"]
+[ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="16_b4xys"]
 [ext_resource type="PackedScene" uid="uid://1xmf4ctlhu8l" path="res://scenes/level/product_stands.tscn" id="16_pvshj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1afir"]
@@ -146,6 +147,8 @@ texture = ExtResource("13_vuq33")
 [node name="VendingGlare" type="Sprite2D" parent="."]
 texture = ExtResource("4_iutuq")
 metadata/_edit_lock_ = true
+
+[node name="Character" parent="." instance=ExtResource("16_b4xys")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
