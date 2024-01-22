@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cji8701owycvy"]
+[gd_scene load_steps=7 format=3 uid="uid://cji8701owycvy"]
 
 [ext_resource type="Script" path="res://scenes/level/premonition.gd" id="1_dktlc"]
 [ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="1_j1ss3"]
 [ext_resource type="Texture2D" uid="uid://drqi62ft2jll7" path="res://assets/secret-11.png" id="1_qis12"]
 [ext_resource type="Texture2D" uid="uid://cb0kd8u5ixxwm" path="res://assets/think_background.png" id="3_07ads"]
 [ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="4_5528e"]
-[ext_resource type="FontFile" uid="uid://rkiv8biwxlev" path="res://assets/31khz-futuristic1412.ttf" id="6_ujhb0"]
-
-[sub_resource type="Theme" id="Theme_6j7kl"]
-default_font = ExtResource("6_ujhb0")
-default_font_size = 8
+[ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="6_etdm0"]
 
 [node name="Premonition" type="Node2D"]
 position = Vector2(223, 134)
@@ -56,5 +52,5 @@ offset_left = 133.0
 offset_top = -128.0
 offset_right = 215.0
 offset_bottom = -97.0
-theme = SubResource("Theme_6j7kl")
+theme = ExtResource("6_etdm0")
 text = "< volver"

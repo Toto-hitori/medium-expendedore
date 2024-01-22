@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=20 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 [ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
+[ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="13_oo7ge"]
 [ext_resource type="Texture2D" uid="uid://bsm37tyq2re7a" path="res://assets/exit-top_part.png" id="13_vuq33"]
 [ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="16_b4xys"]
 [ext_resource type="PackedScene" uid="uid://1xmf4ctlhu8l" path="res://scenes/level/product_stands.tscn" id="16_pvshj"]
@@ -133,6 +134,22 @@ position = Vector2(342, 224)
 [node name="ProductKeyPad" parent="UI" instance=ExtResource("9_h5rwr")]
 position = Vector2(342, 112)
 
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -364.0
+offset_top = -42.0
+offset_right = -301.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_oo7ge")
+text = "flipar"
+
 [node name="FallingProducts" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -149,6 +166,7 @@ texture = ExtResource("4_iutuq")
 metadata/_edit_lock_ = true
 
 [node name="Character" parent="." instance=ExtResource("16_b4xys")]
+position = Vector2(-183, 109)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
