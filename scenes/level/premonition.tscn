@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cji8701owycvy"]
+
+[ext_resource type="Shader" path="res://shaders/premonition.gdshader" id="1_hsmiw"]
+[ext_resource type="Texture2D" uid="uid://drqi62ft2jll7" path="res://assets/secret-11.png" id="1_qis12"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhdh2"]
+shader = ExtResource("1_hsmiw")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.0
+
+[node name="Premonition" type="Node2D"]
+position = Vector2(223, 134)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uhdh2")
+position = Vector2(1, 9)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_qis12")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
