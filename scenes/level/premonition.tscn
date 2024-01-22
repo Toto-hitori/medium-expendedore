@@ -1,12 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cji8701owycvy"]
 
-[ext_resource type="Shader" path="res://shaders/premonition.gdshader" id="1_hsmiw"]
+[ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="1_j1ss3"]
 [ext_resource type="Texture2D" uid="uid://drqi62ft2jll7" path="res://assets/secret-11.png" id="1_qis12"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhdh2"]
-shader = ExtResource("1_hsmiw")
-shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/force = 0.001
+[ext_resource type="Texture2D" uid="uid://cpo3gqxkt5ar1" path="res://assets/Thinking_spr.png" id="3_s3f01"]
 
 [node name="Premonition" type="Node2D"]
 position = Vector2(223, 134)
@@ -27,7 +23,7 @@ offset_bottom = 162.0
 color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_uhdh2")
+material = ExtResource("1_j1ss3")
 position = Vector2(-29, 10)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_qis12")
@@ -35,3 +31,7 @@ texture = ExtResource("1_qis12")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 metadata/_edit_lock_ = true
+
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(186, 101)
+texture = ExtResource("3_s3f01")

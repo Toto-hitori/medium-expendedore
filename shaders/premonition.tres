@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bq38its3otr66"]
+
+[ext_resource type="Shader" path="res://shaders/premonition.gdshader" id="1_xvu1b"]
+
+[resource]
+shader = ExtResource("1_xvu1b")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.001
+shader_parameter/delay = 10.0
