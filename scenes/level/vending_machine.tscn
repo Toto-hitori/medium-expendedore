@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=15 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="8_y5ov5"]
 [ext_resource type="PackedScene" uid="uid://cgm6r6lq5mf7b" path="res://scenes/level/product_keypad.tscn" id="9_h5rwr"]
 [ext_resource type="PackedScene" uid="uid://ddrlyeb6utsci" path="res://scenes/level/object_hatch.tscn" id="13_l0x3d"]
+[ext_resource type="Texture2D" uid="uid://bsm37tyq2re7a" path="res://assets/exit-top_part.png" id="13_vuq33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1afir"]
 size = Vector2(269, 20)
@@ -107,6 +108,7 @@ metadata/_edit_lock_ = true
 
 [node name="CuadradoTrufa" parent="FallingProducts" instance=ExtResource("2_jt7yu")]
 position = Vector2(-185, -95)
+rotation = -0.191986
 
 [node name="VendingGlare" type="Sprite2D" parent="."]
 texture = ExtResource("4_iutuq")
@@ -126,6 +128,10 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingItemDetectionArea"]
 position = Vector2(-88.5, 144)
 shape = SubResource("RectangleShape2D_1afir")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(134, 45)
+texture = ExtResource("13_vuq33")
 
 [connection signal="hand_entered" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
 [connection signal="hand_left" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_left"]

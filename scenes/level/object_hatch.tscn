@@ -32,9 +32,10 @@ texture = ExtResource("2_bqc6v")
 metadata/_edit_lock_ = true
 
 [node name="ReadyProducts" type="Node2D" parent="."]
+position = Vector2(0, -35)
 
 [node name="SpawnPosition" type="Marker2D" parent="."]
-position = Vector2(0, -31)
+position = Vector2(0, -8)
 
 [connection signal="body_entered" from="ObjectArea" to="." method="_on_object_area_body_entered"]
 [connection signal="body_exited" from="ObjectArea" to="." method="_on_object_area_body_exited"]
