@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://brtystp10m8r3"]
 
-[ext_resource type="Script" path="res://scenes/level/keyboard_key.gd" id="1_k7yrc"]
+[ext_resource type="Script" path="res://scenes/level/objects/keyboard_key.gd" id="1_k7yrc"]
 [ext_resource type="Texture2D" uid="uid://bmbgo4s0yoxew" path="res://assets/button.png" id="1_lkf41"]
 [ext_resource type="FontFile" uid="uid://rkiv8biwxlev" path="res://assets/31khz-futuristic1412.ttf" id="3_4c13b"]
 

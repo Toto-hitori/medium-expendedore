@@ -1,17 +1,11 @@
 extends Node
 class_name ProductSelection
-var products : Array[Product]
 var current_selection : String = ""
 var selected_product: Product 
 
 signal product_select(name)
 signal pick_product(val)
 signal invalid_product()
-func _init(): 
-	products = [Product.new('Cuadrado\ntrufa',"11",1),
-		Product.new('Kinda\ngood',"23",1),
-		Product.new('Pan de\npipas',"31",1)
-	]
 
 func add_key(val : int):
 	if(current_selection.length() < 2):
@@ -23,7 +17,7 @@ func product_selected() -> bool:
 	return selected_product != null
 
 func get_product_with_code(code : String):
-	var p : Array[Product] = products.filter(func(product: Product):return product.code == current_selection)
+	var p : Array[Product] = Products.products.filter(func(product: Product):return product.code == current_selection)
 	if p.size() == 0: 
 		return null
 	else: 

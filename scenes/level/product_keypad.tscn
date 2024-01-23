@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgm6r6lq5mf7b"]
 
-[ext_resource type="PackedScene" uid="uid://brtystp10m8r3" path="res://scenes/level/keyboard_key.tscn" id="1_cx8gy"]
+[ext_resource type="PackedScene" uid="uid://brtystp10m8r3" path="res://scenes/level/objects/keyboard_key.tscn" id="1_cx8gy"]
 [ext_resource type="Script" path="res://scenes/level/product_keyboad.gd" id="1_um7c0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_558hn"]
