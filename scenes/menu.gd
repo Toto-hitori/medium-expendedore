@@ -5,4 +5,4 @@ func _on_play_button_pressed():
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://path/to/scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/about_me.tscn")
