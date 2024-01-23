@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b87q33ooimjg0"]
+
+[ext_resource type="PackedScene" uid="uid://d2mbmj7whdj3x" path="res://scenes/items/item.tscn" id="1_cexfo"]
+[ext_resource type="Texture2D" uid="uid://dr4prthqms3r8" path="res://assets/items/pan_pipas.png" id="2_n5mc0"]
+
+[node name="PanPipas" instance=ExtResource("1_cexfo")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_n5mc0")
