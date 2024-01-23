@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkqtb40t0i2pa"]
+
+[ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="1_baof5"]
+[ext_resource type="Script" path="res://scenes/win.gd" id="1_lsqqg"]
+[ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="2_pxndn"]
+[ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="2_rnye4"]
+
+[node name="WIN" type="Node2D"]
+position = Vector2(223, 134)
+script = ExtResource("1_lsqqg")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+material = ExtResource("2_rnye4")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = -118.0
+offset_right = 86.0
+offset_bottom = -93.0
+grow_horizontal = 2
+theme = ExtResource("2_pxndn")
+theme_override_font_sizes/font_size = 20
+text = "victoria sabrosa :D"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Character" parent="Node2D" instance=ExtResource("1_baof5")]
+position = Vector2(6, 25)
+scale = Vector2(1.85505, 1.85505)

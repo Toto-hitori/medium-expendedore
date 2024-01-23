@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpkf0itbacvyf"]
+[gd_scene load_steps=5 format=3 uid="uid://dpkf0itbacvyf"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_4mngp"]
 [ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="1_rtglq"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="3_m6wr7"]
+[ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="4_0k6ng"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_4mngp")
@@ -26,7 +27,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -146.0
+offset_left = -162.0
 offset_top = 15.5
 offset_right = -17.0
 offset_bottom = 64.5
@@ -34,9 +35,9 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("1_rtglq")
 theme_override_font_sizes/font_size = 15
-text = "play"
+text = "jugar"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="CreditsButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -51,9 +52,21 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("1_rtglq")
 theme_override_font_sizes/font_size = 15
-text = "credits"
+text = "creditos"
 
 [node name="Hand" parent="." instance=ExtResource("3_m6wr7")]
 metadata/_edit_lock_ = true
 
+[node name="Label" type="Label" parent="."]
+material = ExtResource("4_0k6ng")
+offset_left = -203.0
+offset_top = -94.0
+offset_right = 171.0
+offset_bottom = -22.0
+theme = ExtResource("1_rtglq")
+theme_override_font_sizes/font_size = 30
+text = "medium 
+expendedore"
+
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/CreditsButton" to="." method="_on_credits_button_pressed"]
