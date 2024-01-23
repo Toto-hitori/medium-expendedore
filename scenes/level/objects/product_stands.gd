@@ -15,7 +15,7 @@ func release_product(code: String):
 		item.rotation = 3.14/6
 		$FallingProducts.add_child(item)
 		Products.generate_random()
-		remove_first_product()
+		remove_first_product(code)
 
 func place_products():
 	for p in Products.get_products():
@@ -34,5 +34,5 @@ func place_products():
 func get_roller_with_code(code):
 	return $RollyThings.get_child(int(code[0])-1).get_child(int(code[1])-1)
 
-func remove_first_product():
-	pass
+func remove_first_product(code):
+	$PlacedProducts.get_children().filter(func(node : Node):return node.name == code)[0].queue_free()

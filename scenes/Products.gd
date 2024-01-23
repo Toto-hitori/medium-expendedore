@@ -8,7 +8,7 @@ func _init():
 		Product.new('Pan de\npipas',"31",1,"res://scenes/items/pan_pipas.tscn","res://assets/secret-pipas.png","res://assets/items/pan_pipas.png")
 	]
 
-func get_product_with_code(code : String):
+func get_product_with_code(code : String) -> Product:
 	var p : Array[Product] = _products.filter(func(product: Product):return product.code == code && product.number > 0)
 	if p.size() == 0: 
 		return null
@@ -20,6 +20,7 @@ func get_products() -> Array[Product]:
 
 func release_product(code : String) -> Node2D:
 	if(code == _random_sel.code):
+		
 		return get_product_with_code(code).release()
 	else: 
 		return null
