@@ -5,7 +5,8 @@ func _ready():
 	Products.get_random_selection()
 
 func _process(_delta):
-	$UI/FliparButton.visible = Products.has_products_left()
+	if(!Products.has_products_left()):
+		$UI/FliparButton.visible = false
 
 func _on_flipar_button_pressed():
 	

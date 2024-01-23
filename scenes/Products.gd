@@ -38,5 +38,5 @@ func generate_random():
 			_random_sel = _products[rng.randi_range(0,_products.size()-1)]
 	return _random_sel
 
-func has_products_left():
+func has_products_left() -> bool:
 	return _products.filter(func(product: Product):return  product.number > 0).size() > 0
