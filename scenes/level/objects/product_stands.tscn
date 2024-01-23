@@ -1,48 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://1xmf4ctlhu8l"]
+[gd_scene load_steps=4 format=3 uid="uid://1xmf4ctlhu8l"]
 
 [ext_resource type="Texture2D" uid="uid://do5kaoyka81ny" path="res://assets/product-stands.png" id="1_cq3i5"]
 [ext_resource type="Script" path="res://scenes/level/objects/product_stands.gd" id="1_n6v1c"]
 [ext_resource type="PackedScene" uid="uid://diw4bok3236vj" path="res://scenes/level/rolly_thing.tscn" id="2_xqesg"]
-[ext_resource type="Texture2D" uid="uid://dvd4dex7jlbr7" path="res://assets/items/cuadrado_trufa.png" id="4_aq5du"]
-[ext_resource type="Texture2D" uid="uid://dr4prthqms3r8" path="res://assets/items/pan_pipas.png" id="5_nda44"]
-[ext_resource type="Texture2D" uid="uid://c4308vlbvyw4r" path="res://assets/items/kinda_good.png" id="6_0sgat"]
 
 [node name="ProductStands" type="Node2D"]
 script = ExtResource("1_n6v1c")
 
 [node name="PlacedProducts" type="Node2D" parent="."]
-
-[node name="CuadradoTrufa" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-82, -94)
-rotation = 0.10884
-texture = ExtResource("4_aq5du")
-
-[node name="CuadradoTrufa2" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-90, -94)
-rotation = 0.10884
-texture = ExtResource("4_aq5du")
-
-[node name="Pipas" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-88, 37)
-texture = ExtResource("5_nda44")
-
-[node name="Pipas2" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(-92, 38)
-texture = ExtResource("5_nda44")
-
-[node name="KindaGood3" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(32.2264, -27.7736)
-texture = ExtResource("6_0sgat")
-
-[node name="KindaGood2" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(35.2264, -25.7736)
-rotation = -0.0920373
-texture = ExtResource("6_0sgat")
-
-[node name="KindaGood" type="Sprite2D" parent="PlacedProducts"]
-position = Vector2(34.2264, -25.7736)
-rotation = 0.196633
-texture = ExtResource("6_0sgat")
 
 [node name="ProductStandsSpr" type="Sprite2D" parent="."]
 texture = ExtResource("1_cq3i5")
