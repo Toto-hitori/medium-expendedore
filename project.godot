@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Eii-gamejam 2024"
+config/name="Medium Expendedore v0.1"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/logo.png"
 
 [autoload]
 
