@@ -16,17 +16,9 @@ func add_key(val : int):
 func product_selected() -> bool:
 	return selected_product != null
 
-func get_product_with_code(code : String):
-	var p : Array[Product] = Products.products.filter(func(product: Product):return product.code == current_selection)
-	if p.size() == 0: 
-		return null
-	else: 
-		return p[0]
-
 func reset():
 	current_selection = ""
 	selected_product = null
-	print('selection reset')
 
 func ask_for_payment():
 	if(selected_product == null):
@@ -38,7 +30,7 @@ func ask_for_payment():
 		$ResetTimer.start()
 
 func _on_product_selection_timer_timeout():
-	selected_product = get_product_with_code(current_selection)
+	selected_product = Products.get_product_with_code(current_selection)
 	ask_for_payment()
 
 func _on_reset_timer_timeout():
