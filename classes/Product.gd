@@ -13,6 +13,7 @@ func _init(_name,_code,_number,_scene,_texture,_item_texture):
 	scene = load(_scene)
 	texture = load(_texture)
 	item_texture = load(_item_texture)
+	
 func release():
 	number -= 1;
 	var _scene = scene.instantiate()
