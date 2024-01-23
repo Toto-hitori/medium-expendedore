@@ -34,7 +34,7 @@ func generate_random():
 	_random_sel = null
 	if(has_products_left()):
 		var rng = RandomNumberGenerator.new()
-		while(_random_sel == null):
+		while(_random_sel == null || _random_sel.number == 0):
 			_random_sel = _products[rng.randi_range(0,_products.size()-1)]
 	return _random_sel
 
