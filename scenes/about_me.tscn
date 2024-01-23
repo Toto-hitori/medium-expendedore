@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhfs1nuh7pkkw"]
+[gd_scene load_steps=7 format=3 uid="uid://bhfs1nuh7pkkw"]
 
 [ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="1_dfdua"]
 [ext_resource type="Script" path="res://scenes/about_me.gd" id="1_orn6g"]
 [ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="2_c2rbs"]
 [ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="4_im1g8"]
+[ext_resource type="PackedScene" uid="uid://bwmkap41yu0iy" path="res://scenes/camera.tscn" id="5_fpnsh"]
+[ext_resource type="Script" path="res://scenes/camera.gd" id="6_hok0w"]
 
 [node name="About me" type="Node2D"]
 script = ExtResource("1_orn6g")
@@ -15,11 +17,7 @@ offset_right = 236.0
 offset_bottom = 147.0
 color = Color(0.372549, 0.0156863, 0.235294, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-metadata/_edit_lock_ = true
-
-[node name="Control" type="Control" parent="Camera2D"]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -223.0
@@ -27,7 +25,7 @@ offset_top = -135.0
 offset_right = 223.0
 offset_bottom = 134.0
 
-[node name="PlayButton" type="Button" parent="Camera2D/Control"]
+[node name="PlayButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -44,7 +42,7 @@ theme = ExtResource("1_dfdua")
 theme_override_font_sizes/font_size = 15
 text = "< volver"
 
-[node name="Label" type="Label" parent="Camera2D/Control"]
+[node name="Label" type="Label" parent="Control"]
 material = ExtResource("2_c2rbs")
 layout_mode = 1
 anchors_preset = 5
@@ -59,7 +57,7 @@ theme = ExtResource("1_dfdua")
 theme_override_font_sizes/font_size = 30
 text = "a game by:"
 
-[node name="Label2" type="Label" parent="Camera2D/Control"]
+[node name="Label2" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -77,4 +75,7 @@ text = "Dario G. Mori
 [node name="Hand" parent="." instance=ExtResource("4_im1g8")]
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Camera2D/Control/PlayButton" to="." method="_on_play_button_pressed"]
+[node name="Camera2D" parent="." instance=ExtResource("5_fpnsh")]
+script = ExtResource("6_hok0w")
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
