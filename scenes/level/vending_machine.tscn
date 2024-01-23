@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=19 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
 [ext_resource type="Script" path="res://scenes/level/vending_machine.gd" id="1_y2got"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cpfa2rn27ogyl" path="res://scenes/level/objects/coin_slot.tscn" id="13_doyim"]
 [ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="13_oo7ge"]
 [ext_resource type="Texture2D" uid="uid://bsm37tyq2re7a" path="res://assets/exit-top_part.png" id="13_vuq33"]
+[ext_resource type="PackedScene" uid="uid://bwmkap41yu0iy" path="res://scenes/camera.tscn" id="15_pkdxv"]
 [ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="16_b4xys"]
+[ext_resource type="Script" path="res://scenes/camera.gd" id="16_dqbxw"]
 [ext_resource type="PackedScene" uid="uid://1xmf4ctlhu8l" path="res://scenes/level/objects/product_stands.tscn" id="16_pvshj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1afir"]
@@ -125,9 +127,8 @@ metadata/_edit_lock_ = true
 [node name="Character" parent="." instance=ExtResource("16_b4xys")]
 position = Vector2(-183, 109)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-metadata/_edit_lock_ = true
+[node name="Camera2D2" parent="." instance=ExtResource("15_pkdxv")]
+script = ExtResource("16_dqbxw")
 
 [node name="Hand" parent="." instance=ExtResource("8_y5ov5")]
 metadata/_edit_lock_ = true

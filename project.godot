@@ -24,7 +24,6 @@ GlobalScene="*res://classes/GlobalScene.gd"
 
 window/size/viewport_width=1338
 window/size/viewport_height=804
-window/size/resizable=false
 
 [editor]
 

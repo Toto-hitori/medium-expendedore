@@ -1,14 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkqtb40t0i2pa"]
+[gd_scene load_steps=7 format=3 uid="uid://bkqtb40t0i2pa"]
 
 [ext_resource type="PackedScene" uid="uid://c3b1vot06af27" path="res://scenes/character/character.tscn" id="1_baof5"]
 [ext_resource type="Script" path="res://scenes/win.gd" id="1_lsqqg"]
 [ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="2_pxndn"]
 [ext_resource type="Material" uid="uid://bq38its3otr66" path="res://shaders/premonition.tres" id="2_rnye4"]
+[ext_resource type="PackedScene" uid="uid://bwmkap41yu0iy" path="res://scenes/camera.tscn" id="4_abdas"]
+[ext_resource type="Script" path="res://scenes/camera.gd" id="5_bs241"]
 
 [node name="WIN" type="Node2D"]
 position = Vector2(223, 134)
 script = ExtResource("1_lsqqg")
 metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -225.0
+offset_top = -135.0
+offset_right = 238.0
+offset_bottom = 148.0
+color = Color(0.372549, 0.0156863, 0.235294, 1)
 
 [node name="Label" type="Label" parent="."]
 material = ExtResource("2_rnye4")
@@ -24,9 +33,8 @@ theme = ExtResource("2_pxndn")
 theme_override_font_sizes/font_size = 20
 text = "victoria sabrosa :D"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-metadata/_edit_lock_ = true
+[node name="Camera2D" parent="." instance=ExtResource("4_abdas")]
+script = ExtResource("5_bs241")
 
 [node name="Node2D" type="Node2D" parent="."]
 scale = Vector2(2, 2)
