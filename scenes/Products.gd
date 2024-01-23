@@ -4,7 +4,7 @@ var _products : Array[Product]
 
 func _init(): 
 	_products = [Product.new('Cuadrado\ntrufa',"11",2,"res://scenes/items/cuadrado_trufa.tscn"),
-		Product.new('Kinda\ngood',"23",1,"res://scenes/items/pan_pipas.tscn"),
+		Product.new('Kinda\ngood',"23",1,"res://scenes/items/kinda_good.tscn"),
 		Product.new('Pan de\npipas',"31",1,"res://scenes/items/pan_pipas.tscn")
 	]
 
