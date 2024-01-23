@@ -20,11 +20,6 @@ config/icon="res://assets/logo.png"
 Products="*res://scenes/Products.gd"
 GlobalScene="*res://classes/GlobalScene.gd"
 
-[display]
-
-window/size/viewport_width=1338
-window/size/viewport_height=804
-
 [editor]
 
 version_control/plugin_name="GitPlugin"
