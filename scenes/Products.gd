@@ -4,7 +4,7 @@ var _products : Array[Product]
 var _random_sel : Product
 func _init(): 
 	_products = [Product.new('Cuadrado\ntrufa',"11",2,"res://scenes/items/cuadrado_trufa.tscn","res://assets/secret-11.png","res://assets/items/cuadrado_trufa.png"),
-		Product.new('Kinda\ngood',"23",1,"res://scenes/items/kinda_good.tscn","res://assets/Thinking_hands.png","res://assets/items/kinda_good.png"),
+		Product.new('Kinda\ngood',"23",1,"res://scenes/items/kinda_good.tscn","res://assets/kinda_good_secret.png","res://assets/items/kinda_good.png"),
 		Product.new('Pan de\npipas',"31",1,"res://scenes/items/pan_pipas.tscn","res://assets/secret-pipas.png","res://assets/items/pan_pipas.png")
 	]
 
