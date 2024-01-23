@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpkf0itbacvyf"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_4mngp"]
+[ext_resource type="Theme" uid="uid://ms405pn04d6h" path="res://shaders/button.theme" id="1_rtglq"]
+[ext_resource type="PackedScene" uid="uid://cpddxgjlmomef" path="res://scenes/character/hand.tscn" id="3_m6wr7"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_4mngp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -223.0
+offset_top = -135.0
+offset_right = 223.0
+offset_bottom = 134.0
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = 15.5
+offset_right = -17.0
+offset_bottom = 64.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_rtglq")
+theme_override_font_sizes/font_size = 15
+text = "play"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 70.5
+offset_right = -17.0
+offset_bottom = 115.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_rtglq")
+theme_override_font_sizes/font_size = 15
+text = "credits"
+
+[node name="Hand" parent="." instance=ExtResource("3_m6wr7")]
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]

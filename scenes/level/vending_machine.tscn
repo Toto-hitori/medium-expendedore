@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bp6d1x34i1500"]
+[gd_scene load_steps=17 format=3 uid="uid://bp6d1x34i1500"]
 
 [ext_resource type="Texture2D" uid="uid://kvstim6sdmft" path="res://assets/vending.png" id="1_y1twq"]
+[ext_resource type="Script" path="res://scenes/level/vending_machine.gd" id="1_y2got"]
 [ext_resource type="PackedScene" uid="uid://dkgkejuc72cp6" path="res://scenes/level/screen.tscn" id="2_1suv6"]
 [ext_resource type="Texture2D" uid="uid://damgant13uoo" path="res://assets/product-stands-back.png" id="2_ku7n8"]
 [ext_resource type="Texture2D" uid="uid://bxkdty2usjnni" path="res://assets/vending-glare.png" id="4_iutuq"]
@@ -20,6 +21,7 @@ size = Vector2(269, 20)
 
 [node name="VendingMachine" type="Node2D"]
 position = Vector2(224, 134)
+script = ExtResource("1_y2got")
 
 [node name="VendingMachine" type="Sprite2D" parent="."]
 texture = ExtResource("1_y1twq")
@@ -79,7 +81,7 @@ grow_vertical = 2
 [node name="ProductKeyPad" parent="UI" instance=ExtResource("9_h5rwr")]
 position = Vector2(342, 112)
 
-[node name="Button" type="Button" parent="UI"]
+[node name="FliparButton" type="Button" parent="UI"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -143,6 +145,7 @@ shape = SubResource("RectangleShape2D_1afir")
 [connection signal="key_pressed" from="UI/ProductKeyPad" to="UI/screen" method="_on_product_keyboad_key_pressed"]
 [connection signal="keyboard_entered" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_entered"]
 [connection signal="keyboard_exited" from="UI/ProductKeyPad" to="Hand" method="_on_product_keyboad_keyboard_exited"]
+[connection signal="pressed" from="UI/FliparButton" to="." method="_on_flipar_button_pressed"]
 [connection signal="hand_entered" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_entered"]
 [connection signal="hand_left" from="UI/ObjectHatch" to="Hand" method="_on_object_hatch_hand_left"]
 [connection signal="grab_object" from="Hand" to="UI/ObjectHatch" method="_on_hand_grab_object"]
